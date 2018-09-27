@@ -62,7 +62,7 @@ app.post('/', urlencodedParser, function(req, res) {
   const filename = `${timestamp}.txt`
   const path = `${__dirname}/files/${filename}`
 
-  const jsFilename = `${sanitize(author)}_${timestamp}.js`
+  const jsFilename = `${timestamp}_${sanitize(author)}.js`
   const jsPath = join(process.env.PLAYER_DIR, jsFilename)
 
   fs.writeFile(jsPath, content, function (err) {
